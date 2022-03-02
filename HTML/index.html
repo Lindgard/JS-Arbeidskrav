@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/style.css" />
     <title>Shopping list</title>
   </head>
   <body>
@@ -11,17 +12,33 @@
       <h1>Shopping list</h1>
     </header>
     <main>
+      <!--må kunne slette og legge til items i alle lister-->
+      <!--skal være alert ved sletting av vare og velkomst melding-->
       <div class="safe-stored">
         <h3>Items in storage</h3>
+        <input type="text" id="add-item-storage" placeholder="Add item here" />
+        <input type="number" id="quantity-add-storage" />
+        <input type="button" value="Submit" id="submit-storage" />
+        <input type="button" value="Delete" id="delete-storage" />
         <ul id="stored-items"></ul>
       </div>
       <div class="items-needed">
-          <h3>Items to buy</h3>
-          <ul id="purchases"></ul>
+        <h3>Items to buy</h3>
+        <input type="text" id="add-item-purchase" placeholder="Add item here" />
+        <input type="number" id="quantity-add-purchase" />
+        <input type="text" name="" id="price-add">
+        <input type="button" value="Submit" id="submit-purchase" />
+        <input type="button" value="Delete" id="delete-purchase" />
+        <!--må ha pris med i listen her samt totalbeløp for hele kategorien-->
+        <ul id="purchases"></ul>
       </div>
       <div class="low-storage">
-          <h3>items running low</h3>
-          <ul id="low-storage"></ul>
+        <h3>items running low</h3>
+        <input type="text" id="add-item-low" placeholder="Add item here" />
+        <input type="number" id="quantity-add-low" />
+        <input type="button" value="Submit" id="submit-low" />
+        <input type="button" value="Delete" id="delete-low" />
+        <ul id="low-storage"></ul>
       </div>
     </main>
     <script src="/JS/index.js"></script>

@@ -1,0 +1,1 @@
+let storageItems = document.getElementById("stored-items");
