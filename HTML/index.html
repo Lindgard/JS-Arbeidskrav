@@ -15,29 +15,50 @@
       <!--må kunne slette og legge til items i alle lister-->
       <!--skal være alert ved sletting av vare og velkomst melding-->
       <div class="safe-stored">
-        <h3>Items in storage</h3>
-        <input type="text" id="add-item-storage" placeholder="Add item here" />
+        <input
+          type="text"
+          id="add-item-storage"
+          placeholder="Add item here"
+          class="input-txt"
+        />
         <input type="number" id="quantity-add-storage" />
-        <input type="button" value="Submit" id="submit-storage" />
-        <input type="button" value="Delete" id="delete-storage" />
+        <input type="button" value="Submit" id="submit-storage" class="btn" />
+        <input type="button" value="Delete" id="delete-storage" class="btn" />
+        <h3>Items in storage</h3>
         <ul id="stored-items"></ul>
       </div>
       <div class="items-needed">
-        <h3>Items to buy</h3>
-        <input type="text" id="add-item-purchase" placeholder="Add item here" />
+        <input
+          type="text"
+          id="add-item-purchase"
+          placeholder="Add item here"
+          class="input-txt"
+        />
         <input type="number" id="quantity-add-purchase" />
-        <input type="text" name="" id="price-add">
-        <input type="button" value="Submit" id="submit-purchase" />
-        <input type="button" value="Delete" id="delete-purchase" />
+        <input
+          type="text"
+          name=""
+          id="price-add"
+          placeholder="Price of item"
+          class="input-txt"
+        />
+        <input type="button" value="Submit" id="submit-purchase" class="btn" />
+        <input type="button" value="Delete" id="delete-purchase" class="btn" />
         <!--må ha pris med i listen her samt totalbeløp for hele kategorien-->
+        <h3>Items to buy</h3>
         <ul id="purchases"></ul>
       </div>
       <div class="low-storage">
-        <h3>items running low</h3>
-        <input type="text" id="add-item-low" placeholder="Add item here" />
+        <input
+          type="text"
+          id="add-item-low"
+          placeholder="Add item here"
+          class="input-txt"
+        />
         <input type="number" id="quantity-add-low" />
-        <input type="button" value="Submit" id="submit-low" />
-        <input type="button" value="Delete" id="delete-low" />
+        <input type="button" value="Submit" id="submit-low" class="btn" />
+        <input type="button" value="Delete" id="delete-low" class="btn" />
+        <h3>items running low</h3>
         <ul id="low-storage"></ul>
       </div>
     </main>
