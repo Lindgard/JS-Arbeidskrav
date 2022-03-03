@@ -22,7 +22,13 @@
           class="input-txt"
         />
         <input type="number" id="quantity-add-storage" />
-        <input type="button" value="Submit" id="submit-storage" class="btn" />
+        <input
+          type="button"
+          value="Submit"
+          id="submit-storage"
+          class="btn"
+          onclick="addItemStorage()"
+        />
         <input type="button" value="Delete" id="delete-storage" class="btn" />
         <h3>Items in storage</h3>
         <ul id="stored-items"></ul>
@@ -42,7 +48,13 @@
           placeholder="Price of item"
           class="input-txt"
         />
-        <input type="button" value="Submit" id="submit-purchase" class="btn" />
+        <input
+          type="button"
+          value="Submit"
+          id="submit-purchase"
+          class="btn"
+          onclick="addItemPurchase()"
+        />
         <input type="button" value="Delete" id="delete-purchase" class="btn" />
         <!--må ha pris med i listen her samt totalbeløp for hele kategorien-->
         <h3>Items to buy</h3>
@@ -56,7 +68,13 @@
           class="input-txt"
         />
         <input type="number" id="quantity-add-low" />
-        <input type="button" value="Submit" id="submit-low" class="btn" />
+        <input
+          type="button"
+          value="Submit"
+          id="submit-low"
+          class="btn"
+          onclick="addItemLowStock()"
+        />
         <input type="button" value="Delete" id="delete-low" class="btn" />
         <h3>items running low</h3>
         <ul id="low-storage"></ul>
