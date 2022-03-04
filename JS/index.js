@@ -8,15 +8,20 @@ let inputItem = document.getElementById("add-item-storage");
 let storageItemsList = document.getElementById("stored-items");
 const itemArrayStorage = [];
 
+// Vet at dette skal kunne fungere, men fant ikke noe ut av det...
+/* function updateStorage () {
+  storageItemsList.innerHTML += `<li>${newItemStorage}</li>`;
+}*/
+
 function addItemStorage() {
   let newItemStorage = inputItem.value;
   storageItemsList.innerHTML += `<li>${newItemStorage}</li>`;
   itemArrayStorage.push(newItemStorage);
 }
 
-// function deleteItemStorage() {
-//   itemArrayStorage.splice(0, 1);
-// }
+function deleteItemStorage() {
+  itemArrayStorage.splice(0, 1);
+}
 
 // Items to purchase
 let inputPurchase = document.getElementById("add-item-purchase");
