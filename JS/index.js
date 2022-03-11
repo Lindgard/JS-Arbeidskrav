@@ -15,9 +15,14 @@ function addItemStorage() {
 }
 
 function deleteItemStorage() {
-  itemArrayStorage.splice(-1, 1);
-  storageItemsList.removeChild(storageItemsList.lastChild);
-  return;
+  let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
+  if (checkDelete === "Ja") {
+    itemArrayStorage.splice(-1, 1);
+    storageItemsList.removeChild(storageItemsList.lastChild);
+    return;
+  } else {
+    return;
+  }
 }
 
 // Items to purchase
@@ -25,7 +30,9 @@ let inputPurchase = document.getElementById("add-item-purchase");
 let inputPrice = document.getElementById("price-add");
 let purchaseItemsList = document.getElementById("purchases");
 const itemArrayPurchase = [];
+const priceArray = [];
 
+// legge til vare
 function addItemPurchase() {
   let newItemPurchase = inputPurchase.value;
   let newItemPrice = parseInt(inputPrice.value);
@@ -41,14 +48,28 @@ function addItemPurchase() {
     name: newItemPurchase,
     price: newItemPrice,
   });
+  priceArray.push(newItemPrice);
+  return;
 }
 
-// lage en sum-funksjon for det som legges inn i kjøpe-listen
+// Sum av pris for varer
+let sumPrice = document.getElementById("sum-output");
+let sumPurchasePrice = 0;
+for (let i = 0; i < priceArray.length; i++) {
+  newItemPrice += priceArray[i];
+}
+sumPrice.innerHTML = `Total kostnad: ${sumPurchasePrice}`;
 
+// fjerne vare
 function deleteItemPurchase() {
-  itemArrayPurchase.splice(-1, 1);
-  purchaseItemsList.removeChild(purchaseItemsList.lastChild);
-  return;
+  let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
+  if (checkDelete === "Ja") {
+    itemArrayPurchase.splice(-1, 1);
+    purchaseItemsList.removeChild(purchaseItemsList.lastChild);
+    return;
+  } else {
+    return;
+  }
 }
 
 // Low in stock
@@ -63,7 +84,12 @@ function addItemLowStock() {
 }
 
 function deleteItemLow() {
-  itemArrayLow.splice(-1, 1);
-  lowStorageItemsList.removeChild(lowStorageItemsList.lastChild);
-  return;
+  let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
+  if (checkDelete === "Ja") {
+    itemArrayLow.splice(-1, 1);
+    lowStorageItemsList.removeChild(lowStorageItemsList.lastChild);
+    return;
+  } else {
+    return;
+  }
 }
