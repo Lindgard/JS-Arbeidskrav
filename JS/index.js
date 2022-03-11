@@ -49,17 +49,19 @@ function addItemPurchase() {
     price: newItemPrice,
   });
   priceArray.push(newItemPrice);
+  sumPrices();
   return;
 }
 
 // Sum av pris for varer
-let sumPrice = document.getElementById("sum-output");
-let sumPurchasePrice = 0;
-for (let i = 0; i < priceArray.length; i++) {
-  newItemPrice += priceArray[i];
+function sumPrices() {
+  let sumPurchase = 0;
+  for (let i = 0; i < priceArray.length; i++) {
+    sumPurchase += priceArray[i];
+  }
+  sumOutput = document.getElementById("sum-output");
+  sumOutput.innerHTML = `Total kostnad: ${sumPurchase}`;
 }
-sumPrice.innerHTML = `Total kostnad: ${sumPurchasePrice}`;
-
 // fjerne vare
 function deleteItemPurchase() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
