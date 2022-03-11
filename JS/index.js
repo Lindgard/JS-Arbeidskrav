@@ -8,11 +8,6 @@ let inputItem = document.getElementById("add-item-storage");
 let storageItemsList = document.getElementById("stored-items");
 const itemArrayStorage = [];
 
-// Vet at dette skal kunne fungere, men fant ikke noe ut av det...
-/* function updateStorage () {
-  storageItemsList.innerHTML += `<li>${newItemStorage}</li>`;
-}*/
-
 function addItemStorage() {
   let newItemStorage = inputItem.value;
   storageItemsList.innerHTML += `<li>${newItemStorage}</li>`;
@@ -20,7 +15,9 @@ function addItemStorage() {
 }
 
 function deleteItemStorage() {
-  itemArrayStorage.splice(0, 1);
+  itemArrayStorage.splice(-1, 1);
+  storageItemsList.removeChild(storageItemsList.lastChild);
+  return;
 }
 
 // Items to purchase
@@ -32,7 +29,6 @@ const itemArrayPurchase = [];
 function addItemPurchase() {
   let newItemPurchase = inputPurchase.value;
   let newItemPrice = parseInt(inputPrice.value);
-  // console.log(newItemPrice);
   if (newItemPrice === 0) {
     alert("ERROR! Price cannot be 0!");
     return;
@@ -47,11 +43,13 @@ function addItemPurchase() {
   });
 }
 
-// function deleteItemPurchase() {
-//   itemArrayPurchase.splice(0, 1);
-//   prompt("vil du slette dette? skriv Ja");
-//   console.log(itemArrayPurchase);
-// }
+// lage en sum-funksjon for det som legges inn i kjøpe-listen
+
+function deleteItemPurchase() {
+  itemArrayPurchase.splice(-1, 1);
+  purchaseItemsList.removeChild(purchaseItemsList.lastChild);
+  return;
+}
 
 // Low in stock
 let inputLowStorage = document.getElementById("add-item-low");
@@ -62,4 +60,10 @@ function addItemLowStock() {
   let newItemLow = inputLowStorage.value;
   lowStorageItemsList.innerHTML += `<li>${newItemLow}</li>`;
   itemArrayLow.push(newItemLow);
+}
+
+function deleteItemLow() {
+  itemArrayLow.splice(-1, 1);
+  lowStorageItemsList.removeChild(lowStorageItemsList.lastChild);
+  return;
 }
