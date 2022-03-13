@@ -10,18 +10,28 @@ const itemArrayStorage = [];
 
 function addItemStorage() {
   let newItemStorage = inputItem.value;
-  storageItemsList.innerHTML += `<li>${newItemStorage}</li>`;
+  storageItemsList.innerHTML += `<li class="new-item-storage">${newItemStorage} 
+        <input
+          type="button"
+          value="Delete"
+          id="delete-storage"
+          class="btn"
+          onclick="deleteItemStorage()"
+        /></li>`;
   itemArrayStorage.push(newItemStorage);
 }
 
 function deleteItemStorage() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
-  if (checkDelete === "Ja") {
-    itemArrayStorage.splice(-1, 1);
-    storageItemsList.removeChild(storageItemsList.lastChild);
-    return;
-  } else {
-    return;
+  for (i = 0; i < itemArrayStorage.length; i++) {
+    if (checkDelete === "Ja") {
+      itemArrayStorage.splice(i, 1);
+      let deleteItem = document.querySelector(".new-item-storage");
+      deleteItem.remove();
+      return;
+    } else {
+      return;
+    }
   }
 }
 
@@ -43,7 +53,9 @@ function addItemPurchase() {
     alert("ERROR! Input has to be a number!");
     return;
   }
-  purchaseItemsList.innerHTML += `<li>${newItemPurchase}, ${newItemPrice} kr <input
+  purchaseItemsList.innerHTML += `<li class="new-item-purchase">
+        ${newItemPurchase}, ${newItemPrice} kr 
+        <input
           type="button"
           value="Delete"
           id="delete-purchase"
@@ -71,12 +83,14 @@ function sumPrices() {
 // fjerne vare
 function deleteItemPurchase() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
-  if (checkDelete === "Ja") {
-    itemArrayPurchase.splice(1, 1);
-    purchaseItemsList.removeChild(purchaseItemsList.lastChild);
-    return;
-  } else {
-    return;
+  for (i = 0; i < itemArrayPurchase.length; i++) {
+    if (checkDelete === "Ja") {
+      itemArrayPurchase.splice(i, 1);
+      let deleteItem = document.querySelector(".new-item-purchase");
+      deleteItem.remove(itemArrayPurchase[i]);
+    } else {
+      return;
+    }
   }
 }
 
@@ -87,17 +101,27 @@ const itemArrayLow = [];
 
 function addItemLowStock() {
   let newItemLow = inputLowStorage.value;
-  lowStorageItemsList.innerHTML += `<li>${newItemLow}</li>`;
+  lowStorageItemsList.innerHTML += `<li class="new-item-low">${newItemLow} 
+        <input
+          type="button"
+          value="Delete"
+          id="delete-low"
+          class="btn"
+          onclick="deleteItemLow()"
+        /></li>`;
   itemArrayLow.push(newItemLow);
 }
 
 function deleteItemLow() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
-  if (checkDelete === "Ja") {
-    itemArrayLow.splice(-1, 1);
-    lowStorageItemsList.removeChild(lowStorageItemsList.lastChild);
-    return;
-  } else {
-    return;
+  for (let i = 0; i < itemArrayLow.length; i++) {
+    if (checkDelete === "Ja") {
+      itemArrayLow.splice(-1, 1);
+      let deleteItem = document.querySelector(".new-item-low");
+      deleteItem.remove();
+      return;
+    } else {
+      return;
+    }
   }
 }
