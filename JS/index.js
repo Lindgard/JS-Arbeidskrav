@@ -24,7 +24,7 @@ function addItemStorage() {
 function deleteItemStorage() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
   for (i = 0; i < itemArrayStorage.length; i++) {
-    if (checkDelete === "Ja") {
+    if (checkDelete === "Ja" && i <= 100) {
       itemArrayStorage.splice(i, 1);
       let deleteItem = document.querySelector(".new-item-storage");
       deleteItem.remove();
