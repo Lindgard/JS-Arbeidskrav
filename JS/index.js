@@ -43,7 +43,13 @@ function addItemPurchase() {
     alert("ERROR! Input has to be a number!");
     return;
   }
-  purchaseItemsList.innerHTML += `<li>${newItemPurchase}, ${newItemPrice} kr</li>`;
+  purchaseItemsList.innerHTML += `<li>${newItemPurchase}, ${newItemPrice} kr <input
+          type="button"
+          value="Delete"
+          id="delete-purchase"
+          class="btn"
+          onclick="deleteItemPurchase()"
+        /></li>`;
   itemArrayPurchase.push({
     name: newItemPurchase,
     price: newItemPrice,
@@ -66,7 +72,7 @@ function sumPrices() {
 function deleteItemPurchase() {
   let checkDelete = prompt("vil du slette dette? Skriv Ja/Nei");
   if (checkDelete === "Ja") {
-    itemArrayPurchase.splice(-1, 1);
+    itemArrayPurchase.splice(1, 1);
     purchaseItemsList.removeChild(purchaseItemsList.lastChild);
     return;
   } else {
